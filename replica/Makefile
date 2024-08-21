@@ -10,8 +10,9 @@ CLIENTS=1000
 THREADS=2
 BYTES=200
 RATE=1000
+PIPELINING=3
 
-COMMAND=redis-benchmark -h $(HOST) -p $(PORT) -t $(LIST) -c $(CLIENTS) -n $(REQUESTS) --threads $(THREADS) -d $(BYTES) -r $(RATE) -k 1 -P --enable-tracking
+COMMAND=redis-benchmark -h $(HOST) -p $(PORT) -t $(LIST) -c $(CLIENTS) -n $(REQUESTS) --threads $(THREADS) -d $(BYTES) -r $(RATE) -k 1 -P $(PIPELINING) --enable-tracking
 
 .PHONY: help
 help:
